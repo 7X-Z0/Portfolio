@@ -31,6 +31,7 @@ h2{
     padding-bottom: 2%;
 }
 p{
+    -webkit-text-stroke: 0.5px;
     color: #ffffff;
     padding-top: 2%;
     position: relative;
@@ -40,3 +41,62 @@ p{
     margin-left: 15%;
     margin-right: 15%;
 }
+.draw-border {
+    box-shadow: inset 0 0 0 4px #061441;
+    color: #061441;
+    transition: color 0.25s 0.0833333333s;
+    position: relative;
+}
+  .draw-border::before, .draw-border::after {
+    border: 0 solid transparent;
+    box-sizing: border-box;
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    width: 0;
+    height: 0;
+    bottom: 0;
+    right: 0;
+  }
+  .draw-border::before {
+    border-bottom-width: 4px;
+    border-left-width: 4px;
+  }
+  .draw-border::after {
+    border-top-width: 4px;
+    border-right-width: 4px;
+  }
+  .draw-border:hover {
+    color: #ffd1dc;
+  }
+  .draw-border:hover::before, .draw-border:hover::after {
+    border-color: #ffd1dc;
+    transition: border-color 0s, width 0.25s, height 0.25s;
+    width: 100%;
+    height: 100%;
+  }
+  .draw-border:hover::before {
+    transition-delay: 0s, 0s, 0.25s;
+  }
+  .draw-border:hover::after {
+    transition-delay: 0s, 0.25s, 0s;
+  }
+  
+  .btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    align-items: 250px;
+    line-height: 1.5;
+    font: 700 1.2rem "Roboto Slab", sans-serif;
+    padding: 1em 2em;
+    letter-spacing: 0.05rem;
+  }
+  .container2{
+    display: flex;
+    padding: 0%;
+    padding-top: 3%;
+    align-items: center;
+    justify-content: center;
+    column-gap: 20px;
+  }
